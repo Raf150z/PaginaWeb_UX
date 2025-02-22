@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1rem;
+    font-family: sans-serif;
+    margin-inline: 1rem;
+}
+
+.navbar {
+    background-color: #78AD69;
+}
