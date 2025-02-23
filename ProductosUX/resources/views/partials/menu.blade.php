@@ -6,8 +6,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link " aria-current="page" href="#">Gestion de productos</a>
-                    <a class="nav-link " aria-current="page" href="#">Agregar productos</a>
+                    <a class="nav-link " aria-current="page" href="{{ url('/') }}">Gestion de productos</a>
+                    <a class="nav-link " aria-current="page" href="{{ url('/agregar-producto') }}">Agregar productos</a>
                 </div>
                 </div>
             </div>
