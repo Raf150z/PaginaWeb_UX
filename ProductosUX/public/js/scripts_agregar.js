@@ -65,7 +65,7 @@ document.getElementById('formProducto').addEventListener('submit', function (e) 
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Hubo un error al enviar el formulario.');
+        alert('Por favor llene los campos obligatorios.');
     });
 });
 
@@ -147,7 +147,7 @@ function confirmar() {
         .then(data => {
             if (data.success) {
                 alert('Datos guardados correctamente.');
-                window.location.href = '/'; // Redirige a la página principal
+                window.location.href = '/';
             } else {
                 alert('Hubo un error al guardar los datos.');
             }
@@ -160,30 +160,6 @@ function confirmar() {
 }
 
 
-function eliminarProducto(productoId) {
-    if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        fetch(`/productos/${productoId}`, {
-            method: 'DELETE',
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Producto eliminado correctamente.');
-                window.location.reload();
-            } else {
-                alert('Hubo un error al eliminar el producto.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Hubo un error al enviar la solicitud.');
-        });
-    }
-}
-
 
 document.getElementById('color_hex').addEventListener('input', function () {
     document.getElementById('color_hex_text').value = this.value;
@@ -195,7 +171,61 @@ document.getElementById('color_hex_text').addEventListener('input', function () 
 
     if (/^#[0-9A-F]{6}$/i.test(colorText)) {
         colorInput.value = colorText;
-    } else {
-        alert('Por favor, ingresa un valor hexadecimal válido (Ej: #FF0000).');
     }
+
 });
+
+
+
+// Función para mostrar un formulario específico
+function mostrarFormulario(paso) {
+    // Oculta todos los formularios
+    document.querySelectorAll('form, #resumen').forEach((form) => {
+        form.classList.add('d-none');
+    });
+
+    // Muestra el formulario correspondiente al paso
+    if (paso === 1) {
+        document.getElementById('formProducto').classList.remove('d-none');
+    } else if (paso === 2) {
+        document.getElementById('formDetalles').classList.remove('d-none');
+    } else if (paso === 3) {
+        document.getElementById('formColor').classList.remove('d-none');
+    } else if (paso === 4) {
+        // Llena el resumen con los datos ingresados
+        document.getElementById('resumenNombre').textContent = document.getElementById('nombre').value;
+        document.getElementById('resumenDescripcion').textContent = document.getElementById('descripcion_corta').value;
+        document.getElementById('resumenCategoria').textContent = document.getElementById('categoria').value;
+        document.getElementById('resumenPrecio').textContent = document.getElementById('precio_unitario').value;
+        document.getElementById('resumenStock').textContent = document.getElementById('unidades_stock').value;
+        document.getElementById('resumenColor').textContent = document.getElementById('color_hex_text').value;
+
+        // Muestra el resumen
+        document.getElementById('resumen').classList.remove('d-none');
+    }
+
+    // Actualiza la barra de progreso
+    actualizarBarraProgreso(paso);
+}
+
+// Función para retroceder
+function anterior(pasoActual) {
+    if (pasoActual > 0) {
+        pasoActual = pasoActual + 1;
+        mostrarFormulario(pasoActual - 1);
+    }
+}
+
+// Función para cancelar
+function cancelar(productoId) {
+    if (confirm('¿Estás seguro de que deseas cancelar? Todos los datos se perderán.')) {
+        fetch(`/productos/${productoId}`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                'Content-Type': 'application/json',
+            },
+        })
+    }
+    window.location.href = '/';
+}

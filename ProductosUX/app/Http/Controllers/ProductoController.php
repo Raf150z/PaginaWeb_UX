@@ -11,8 +11,9 @@ class ProductoController extends Controller
 {
     public function index()
     {
-        $productos = Producto::with('detalles')->get(); // Carga la relación detalles
+        $productos = Producto::with('detalles')->get();
         return view('inicio', compact('productos'));
+        
     }
 
 //     public function index()

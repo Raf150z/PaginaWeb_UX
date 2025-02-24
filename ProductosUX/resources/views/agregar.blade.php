@@ -52,6 +52,7 @@
             <div class="contenedor-botonesSyA">
                 <button type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
                 <button type="submit" class="btn btn-success">Siguiente</button>
+
             </div>
         </div>
     </form>
@@ -87,6 +88,7 @@
 
             <div class="contenedor-botonesSyA">
                 <button type="button" class="btn btn-secondary" onclick="anterior(1)">Atrás</button>
+
                 <button type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
                 <button type="submit" class="btn btn-success">Siguiente</button>
 
@@ -125,8 +127,9 @@
 
         <div class="contenedor-botonesSyA">
             <button type="button" class="btn btn-secondary" onclick="anterior(2)">Atrás</button>
-            <button type="submit" class="btn btn-success">Siguiente</button>
             <button type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
+            <button type="submit" class="btn btn-success">Siguiente</button>
+
         </div>
     </div>
 </form>
@@ -148,8 +151,9 @@
 
         <div class="contenedor-botonesSyA-f">
             <button type="button" class="btn btn-secondary" onclick="anterior(3)">Atrás</button>
-            <button type="button" class="btn btn-success" onclick="confirmar()">Guardar y Confirmar</button>
             <button type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
+            <button type="button" class="btn btn-success" onclick="confirmar()">Guardar y Confirmar</button>
+
         </div>
     </div>
 </div>

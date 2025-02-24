@@ -91,7 +91,6 @@ function eliminarProducto(id) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Producto eliminado correctamente');
                 location.reload(); 
             } else {
                 alert('Error al eliminar el producto');
