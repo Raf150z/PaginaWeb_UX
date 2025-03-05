@@ -112,8 +112,6 @@ public function obtenerDatosResumen($id)
 
 public function finalizarProceso(Request $request)
 {
-    // Aquí puedes realizar acciones adicionales, como enviar un correo, generar un PDF, etc.
-    // Por ahora, simplemente devolvemos una respuesta de éxito.
 
     return response()->json(['success' => true]);
 }

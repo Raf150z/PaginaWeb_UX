@@ -110,10 +110,6 @@
             <div class="contenedor-label">
                 <label for="color_hex_text" class="form-label">Elegir un color</label>
             </div>
-            <div class="contenedor-campo">
-                <!-- Input de tipo texto para el valor hexadecimal -->
-                <input type="text" class="form-control" id="color_hex_text" name="color_hex_text" placeholder="Ej: #FF0000" required>
-            </div>
         </div>
 
         <div class="contenedor-input_color mb-3">

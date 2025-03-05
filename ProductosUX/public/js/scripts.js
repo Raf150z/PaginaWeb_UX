@@ -79,8 +79,8 @@ function actualizarAcordion(id, producto) {
     }
 }
 
-function eliminarProducto(id) {
-    if (confirm('¿Estás seguro de eliminar este producto?')) {
+function eliminarProducto(id, nombre) {
+    if (confirm(`¿Estás seguro de eliminar el producto "${nombre}"?`)) {
         fetch(`/productos/${id}`, {
             method: 'DELETE',
             headers: {
@@ -99,4 +99,3 @@ function eliminarProducto(id) {
         .catch(error => console.error('Error:', error));
     }
 }
-

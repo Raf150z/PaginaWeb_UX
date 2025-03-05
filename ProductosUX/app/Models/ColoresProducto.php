@@ -16,7 +16,6 @@ class ColoresProducto extends Model
     protected $fillable = [
         'producto_id',
         'color_hex',
-        // Agrega aquí otros campos que necesites
     ];
 
 }

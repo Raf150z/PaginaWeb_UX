@@ -17,7 +17,6 @@ class DetallesProducto extends Model
         'producto_id',
         'precio_unitario',
         'unidades_stock',
-        // Agrega aquí otros campos que necesites
     ];
 
 }

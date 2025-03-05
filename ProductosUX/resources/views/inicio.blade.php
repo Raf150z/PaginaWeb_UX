@@ -22,7 +22,7 @@
                                     Editar
                                 </button>
                                 
-                                <button class="btn btn-danger btn-sm me-4 border border-white rounded" style="border-width: 2px !important;" onclick="eliminarProducto({{ $producto->id }})">
+                                <button class="btn btn-danger btn-sm me-4 border border-white rounded" style="border-width: 2px !important;" onclick="eliminarProducto({{ $producto->id }}, '{{ $producto->nombre }}')">
                                     Eliminar
                                 </button>
                             </div>

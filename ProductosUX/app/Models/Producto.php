@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
-    protected $table = 'productos'; // Asegúrate de que coincida con el nombre de la tabla
+    protected $table = 'productos';
 
     // Relación con la tabla detalles_producto
     public function detalles()
@@ -24,7 +24,6 @@ class Producto extends Model
         'nombre',
         'descripcion_corta',
         'categoria',
-        // Agrega aquí otros campos que necesites
     ];
 
     public $timestamps = false;

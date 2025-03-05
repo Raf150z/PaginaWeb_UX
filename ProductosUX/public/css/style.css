@@ -16,7 +16,7 @@
 }
 
 .btn-group {
-    margin-left: 10px; /* Espacio entre el nombre y los botones */
+    margin-left: 10px;
 }
 
 .accordion-button {
@@ -115,14 +115,13 @@ p {
     padding: 0;
     border: 2px solid #ccc;
     cursor: pointer;
-    margin: 10px auto; /* Centrar el botón */
-    display: block; /* Ocupar toda la fila */
+    margin: 10px auto;
+    display: block;
 }
 
-/* Estilos para el input de tipo texto (hexadecimal) */
 .form-control {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    margin-bottom: 10px; /* Espacio entre el input de texto y el botón de color */
+    width: 100%;
+    margin-bottom: 10px; 
 }
 
 .contenedor-campo_color {
